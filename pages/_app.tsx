@@ -6,7 +6,9 @@ import 'aos/dist/aos.css';
 import { AppPropsWithLayout } from '@typing';
 import { EmtyLayout } from '@components/index';
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-   console.log('app re-render');
+   const theme = {
+      bg: 'bg-zinc-900',
+   };
    useEffect(() => {
       Aos.init({
          initClassName: 'aos-init',
@@ -14,11 +16,12 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
          easing: 'ease-in-out',
          duration: 1000,
       });
+      document.body.setAttribute('data-theme', 'dark');
    }, []);
    const Layout = Component.Layout ?? EmtyLayout;
    return (
-      <Layout>
-         <Component {...pageProps} />
+      <Layout theme={theme}>
+         <Component theme={theme} {...pageProps} />
       </Layout>
    );
 }

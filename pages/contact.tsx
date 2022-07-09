@@ -1,11 +1,9 @@
 import MainLayout from '@components/Layout';
-import { NextPageWithLayout } from '@typing';
+import { NextPageWithLayout, ThemeProps } from '@typing';
 import React from 'react';
 
-type Props = {};
-
-const Contact: NextPageWithLayout = (props: Props) => {
+const Contact: NextPageWithLayout = () => {
    return <div className="text-white">Contact</div>;
 };
-Contact.Layout = MainLayout
+Contact.Layout = MainLayout;
 export default Contact;
