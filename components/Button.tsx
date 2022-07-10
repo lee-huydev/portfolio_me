@@ -3,19 +3,22 @@ import Link from 'next/link';
 import { HiArrowSmRight } from 'react-icons/hi';
 
 type Props = {
-    href: string,
-    name: string
+   href: string;
+   name: string;
+   rotate: string;
 };
 
-const Button = ({ href, name }: Props) => {
+const Button = ({ href, name, rotate }: Props) => {
    return (
       <Link href={href}>
-         <a className="flex items-center space-x-10 text-white text-lg uppercase">
-            <div className="option-icons text-2xl ss:text-3xl bg-yellow-500 rounded-full">
-               <HiArrowSmRight className="icons" />
+         <a className="btn-link text-white font-semibold">
+            <div className="icon">
+               <HiArrowSmRight
+                  className={`absolute -right-1 sm:right-0 top-1/2 -translate-y-1/2 text-2xl -translate-x-3 ${rotate}`}
+               />
             </div>
-            <div className="w-36 text-xs ss:text-sm ss:w-44 content-btn">
-               <h3>{name}</h3>
+            <div>
+               <h3 className="content">{name}</h3>
             </div>
          </a>
       </Link>

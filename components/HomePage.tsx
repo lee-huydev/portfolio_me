@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Slide, Button } from '@components/index'
+import { Slide, Button } from '@components/index';
 import { HiArrowSmRight } from 'react-icons/hi';
 import { ThemeProps } from '@typing';
 interface Props {
@@ -40,9 +40,17 @@ const HomePage = ({ theme }: Props) => {
                   CSS, Javascript, ReactJS... and would like to find a workplace
                   with a good environment to develop myself.
                </p>
-               <div className="flex space-x-44 ss:space-x-60 justify-start option-nav">
-                  <Button href={'/portfolio'} name={"Portfolio"}/>
-                  <Button href={'/about'} name={"About"}/>
+               <div className="flex space-x-5 pb-24 sm:pb-1">
+                  <Button
+                     href={'/portfolio'}
+                     name={'Portfolio'}
+                     rotate="rotate-0"
+                  />
+                  <Button
+                     href={'/about'}
+                     name={'About'}
+                     rotate="rotate-0"
+                  />
                </div>
             </div>
          </div>

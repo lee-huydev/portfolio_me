@@ -8,7 +8,7 @@ import { LayoutProps } from '@typing';
 const MainLayout = ({ children, theme }: LayoutProps): ReactElement => {
    return (
       <div className="layout w-full h-screen max-w-full bg-zinc-900 -z-50 py-5">
-         <div className="fixed z-10 bottom-0  lg:right-5 lg:bottom-1/2 lg:translate-y-1/2">
+         <div className="fixed z-50 bottom-0  lg:right-5 lg:bottom-1/2 lg:translate-y-1/2">
             <div className="flex space-x-5 h-14 w-screen bg-slate-800 items-center justify-around lg:w-0 lg:h-auto lg:flex-col lg:items-end lg:space-y-5 nav">
                <NavLink
                   href="/"
