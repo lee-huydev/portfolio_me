@@ -7,7 +7,7 @@ import { AppPropsWithLayout } from '@typing';
 import { EmtyLayout } from '@components/index';
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
    const [darkMode, setDarkMode] = useState<boolean>(true)
-   let mode = darkMode ? "light" : "dark"
+   let mode = darkMode ? "dark" : "light"
    useEffect(() => {
       Aos.init({
          initClassName: 'aos-init',

@@ -43,7 +43,7 @@ const AboutPage = ({ theme }: Props) => {
                         <Button
                            Icon={IoMdDownload}
                            link={true}
-                           href="/"
+                           href="https://www.topcv.vn/xem-cv/BAZTA1YEBlNVB1QECQJSVFJXV1YDXABVCwMHCg793c"
                            name="Download cv"
                         />
                      </div>
