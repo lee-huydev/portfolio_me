@@ -16,10 +16,10 @@ const Modal = ({ modals, setDataModals }: Props) => {
          <Script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'/>
          <div className="modal fixed z-10 w-full overflow-y-auto overflow-x-hidden h-screen top-0 left-0">
             <div className="container-modal pt-5 w-full max-w-6xl mx-auto lg:pt-36 px-4">
-               <div className="flex flex-col lg:flex-row px-2 md:px-3 lg:px-5 w-full bg-stone-900 justify-center items-start pt-5 pb-10 lg:space-x-5 rounded-md relative">
+               <div className="flex flex-col lg:flex-row px-2 md:px-3 lg:px-5 w-full bg-stone-900 justify-center items-start pt-5 pb-24 lg:pb-10 lg:space-x-5 rounded-md relative">
                   <div className="absolute right-0 top-0 p-5 translate-x-9 -translate-y-9 rounded-full">
                      <IoMdClose
-                        className="text-3xl lg:text-4xl rounded-full bg-zinc-700 text-yellow-500 cursor-pointer"
+                        className="icon text-3xl lg:text-4xl rounded-full bg-zinc-700 cursor-pointer"
                         onClick={() =>
                            setDataModals({ ...modals, status: false })
                         }
@@ -40,38 +40,38 @@ const Modal = ({ modals, setDataModals }: Props) => {
                      </h3>
                      <div className="br"></div>
                      <div className="flex flex-col mt-10 gap-3">
-                        <p className="text-white">
-                           <span className="text-yellow-500 font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Introduction -
                            </span>{' '}
                            {data?.content}
                         </p>
-                        <p className="text-white">
-                           <span className="text-yellow-500 font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Feature -
                            </span>{' '}
                            {data?.feature}
                         </p>
-                        <p className="text-white">
-                           <span className="text-yellow-500 font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Frontend -{' '}
                            </span>
                            {data?.fe}
                         </p>
-                        <p className="text-white">
-                           <span className="text-yellow-500 font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Backend -{' '}
                            </span>
                            {data?.be}
                         </p>
-                        <p className="text-white">
-                           <span className="text-yellow-500 font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Create -{' '}
                            </span>
                            {data?.create}
                         </p>
-                        <p className="text-yellow-500">
-                           <span className="text-white font-medium">
+                        <p className="">
+                           <span className="font-medium">
                               Demo -{' '}
                            </span>
                            <Link href={data?.link || '/'}>

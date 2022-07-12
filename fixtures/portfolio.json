@@ -2,7 +2,14 @@
    {
       "id": 1,
       "name": "Coffee And You",
-      "image": ["/images/coffee/cf1.png","/images/coffee/cf2.png","/images/coffee/cf3.png","/images/coffee/cf4.png","/images/coffee/cf5.png","/images/coffee/cf6.png"],
+      "image": [
+         "/images/coffee/cf1.png",
+         "/images/coffee/cf2.png",
+         "/images/coffee/cf3.png",
+         "/images/coffee/cf4.png",
+         "/images/coffee/cf5.png",
+         "/images/coffee/cf6.png"
+      ],
       "link": "https://coffeeandyou.cf/",
       "type": "css/javascript",
       "content": "This is the first project since i started studying at Mindx Technology School. It's a website selling coffee, because it's the first project, so I don't have much experience and knowledge, so the website is mainly used HTML CSS and Javascript basis. ",
@@ -14,7 +21,14 @@
    {
       "id": 2,
       "name": "Nextflix",
-      "image": ["/images/netflix/net1.png", "/images/netflix/net2.png", "/images/netflix/net3.png", "/images/netflix/net4.png", "/images/netflix/net5.png", "/images/netflix/net6.png"],
+      "image": [
+         "/images/netflix/net1.png",
+         "/images/netflix/net2.png",
+         "/images/netflix/net3.png",
+         "/images/netflix/net4.png",
+         "/images/netflix/net5.png",
+         "/images/netflix/net6.png"
+      ],
       "link": "https://netflix-tv.cf/",
       "type": "reactjs/firebase",
       "content": "This is the second project since i started studying at Mindx Technology School. It's a movie watching website with an interface cloned by Netflix. UI using ReactJS, styled Components, Bootstrap 5. Database using Firebase (Database, Authentication, Realtime Database, Storage, Hosting) ",
@@ -26,7 +40,11 @@
    {
       "id": 3,
       "name": "Blog Medium",
-      "image": ["/images/blog/blog1.png", "/images/blog/blog2.png", "/images/blog/blog3.png"],
+      "image": [
+         "/images/blog/blog1.png",
+         "/images/blog/blog2.png",
+         "/images/blog/blog3.png"
+      ],
       "link": "https://sanity-blog-rho.vercel.app/",
       "type": "nextjs/tailwind",
       "content": " This is a blog site used to post introductory or review blog posts, with a simple design interface. UI using NextJS, Tailwind CSS, Typescript. Database using Sanity CMS",
@@ -38,12 +56,17 @@
    {
       "id": 4,
       "name": "My Portfolio",
-      "image": ["/images/port/port1.png","/images/port/port2.png" ],
+      "image": [
+         "/images/port/port1.png",
+         "/images/port/port2.png",
+         "/images/port/port2.png",
+         "/images/port/port2.png"
+      ],
       "link": "https://portfolio-me-ten.vercel.app/",
       "type": "scss/nextjs",
       "content": "This site I completed it as a simple app to introduce myself and summarize the products that I have worked on since I started studying IT until now and the skills I have acquired. Website is used HTML, CSS, NextJS, SCSS, Typescript and JSON server",
       "feature": "Show personal information, project, skills...",
-      "create": "Jul 4, 2022 - Jul 10, 2022",
+      "create": "Jul 4, 2022 - Jul 13, 2022",
       "fe": "NetxJS, Tailwind CSS, SCSS, Typescript",
       "be": "JSON Server"
    }

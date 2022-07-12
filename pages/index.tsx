@@ -1,11 +1,8 @@
 import { MainLayout, HomePage } from '@components/index';
 import { NextPageWithLayout, ThemeProps } from '@typing';
 import Head from 'next/head';
-interface Props {
-   theme?: ThemeProps;
-}
 
-const Home: NextPageWithLayout = ({ theme }: Props) => {
+const Home: NextPageWithLayout = () => {
    return (
       <div>
          <Head>

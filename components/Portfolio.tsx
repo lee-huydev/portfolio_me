@@ -15,8 +15,7 @@ import Slide from './Slide';
 interface Props {
    theme?: ThemeProps;
 }
-const Portfolio = ({ theme }: Props) => {
-   const bg = theme?.bg;
+const Portfolio = () => {
    const initState = {
       data: [...PortData],
       filter: { type: 'all' },
@@ -55,13 +54,13 @@ const Portfolio = ({ theme }: Props) => {
    return (
       <>
          <Slide />
-         <Header textInline="Portfolio" textOuline="Works" dataAos="fade-up">
+         <Header textInlineFirst='My' textInlineSecond="Portfolio" textOuline="Works" dataAos="fade-up">
             <>
                <div className="filter grid grid-cols-2 gap-3 px-5 text-xs ss:grid-cols-3 sm:text-sm lg:px-0 lg:flex lg:justify-center lg:space-x-5">
                   {Object.keys(filters).map((key, index) => (
                      <button
                         className={`${
-                           filter.type === key ? 'bg-yellow-500' : 'bg-zinc-800'
+                           filter.type === key ? 'active' : ''
                         } `}
                         key={index}
                         onClick={() => handleOnClick(key)}

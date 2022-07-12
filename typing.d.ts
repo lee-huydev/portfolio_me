@@ -27,7 +27,8 @@ export interface PortItem {
 }
 export interface LayoutProps {
    children?: JSX.Element;
-   theme: ThemeProps;
+   darkMode: boolean,
+   setDarkMode: Dispatch<SetStateAction<boolean>>
 }
 
 export interface Modals {
@@ -40,6 +41,20 @@ export interface DataRender {
       type: string;
    };
    filters: any;
+}
+
+export interface InputForm {
+   name: string,
+   subject: string,
+   email: string,
+   message: string,
+}
+
+export interface ModalContact {
+   loading: boolean,
+   modal: boolean,
+   message: string,
+   status: boolean,
 }
 
 export type NextPageWithLayout = NextPage & {

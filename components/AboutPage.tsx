@@ -1,7 +1,8 @@
 import React from 'react';
+import { IoBookSharp } from 'react-icons/io5';
+import { IoMdDownload } from 'react-icons/io'
 import { Header, Slide, Button } from '@components/index';
 import meData from '@fixtures/me.json';
-import { IoBookSharp } from 'react-icons/io5';
 import { ThemeProps } from '@typing';
 type Props = {
    theme?: ThemeProps;
@@ -12,10 +13,10 @@ const AboutPage = ({ theme }: Props) => {
    return (
       <>
          <Slide />
-         <Header textInline="About" textOuline="Resume" dataAos={false}>
+         <Header textInlineFirst='About' textInlineSecond="Me" textOuline="Resume" dataAos={false}>
             <>
                <div className="info flex px-5 md:space-x-5">
-                  <div className="basis-1/2" data-aos="fade-up-right">
+                  <div className="basis-1/2" data-aos="fade-right">
                      <h3 className="w-full uppercase text-xl ss:text-2xl font-bold">
                         Personal infors
                      </h3>
@@ -29,7 +30,7 @@ const AboutPage = ({ theme }: Props) => {
                                  key={key}
                                  className="basis-full ss:basis-1/2 mb-3 font-normal"
                               >
-                                 <span className="text-gray-400">
+                                 <span className="">
                                     {' '}
                                     {key.replace('-', ' ')}:{' '}
                                  </span>
@@ -40,43 +41,44 @@ const AboutPage = ({ theme }: Props) => {
                      </ul>
                      <div className="mt-5 pb-10 md:pb-0">
                         <Button
+                           Icon={IoMdDownload}
+                           link={true}
                            href="/"
                            name="Download cv"
-                           rotate="rotate-90"
                         />
                      </div>
                   </div>
                   <div
                      className="items-right basis-1/2 grid grid-cols-2 gap-4"
-                     data-aos="fade-up-left"
+                     data-aos="fade-left"
                   >
                      <div className="item">
-                        <div className="flex items-start text-yellow-500">
+                        <div className="flex items-start">
                            <h4 className="text-3xl ss::text-5xl">5</h4>
                            <span className="text-xl ss::text-2xl">+</span>
                         </div>
                         <h3 className="text-md uppercase pl-5 flex items-center">
-                           <span className="w-7 h-0.5 bg-gray-500 rounded mr-2"></span>
+                           <span className="w-7 h-0.5 rounded mr-2"></span>
                            Months of study
                         </h3>
                      </div>
                      <div className="item">
-                        <div className="flex items-start text-yellow-500">
+                        <div className="flex items-start">
                            <h4 className="text-3xl ss::text-5xl">4</h4>
                            <span className="text-xl ss::text-2xl">+</span>
                         </div>
                         <h3 className="text-md uppercase pl-5 flex items-center">
-                           <span className="w-7 h-0.5 bg-gray-500 rounded mr-2"></span>
+                           <span className="w-7 h-0.5 rounded mr-2"></span>
                            Completed Project
                         </h3>
                      </div>
                      <div className="item">
-                        <div className="flex items-start text-yellow-500">
+                        <div className="flex items-start">
                            <h4 className="text-3xl ss::text-5xl">1</h4>
                            <span className="text-xl ss::text-2xl">+</span>
                         </div>
                         <h3 className="text-md uppercase pl-5 flex items-center">
-                           <span className="w-7 h-0.5 bg-gray-500 rounded mr-2"></span>
+                           <span className="w-7 h-0.5 rounded mr-2"></span>
                            Award Won
                         </h3>
                      </div>
@@ -93,7 +95,7 @@ const AboutPage = ({ theme }: Props) => {
                            className="flex flex-col justify-center items-center space-y-2"
                            data-aos="fade-up"
                         >
-                           <span className="inline-block rounded-full bg-zinc-800 p-5">
+                           <span className="inline-block rounded-full p-5">
                               <img
                                  src={`${data.image}/${data.name.replace(
                                     ' ',
@@ -115,16 +117,16 @@ const AboutPage = ({ theme }: Props) => {
                   <div className="resume grid grid-cols-1 px-5 sm:grid-cols-2 gap-10 pb-20" data-aos="fade-up">
                      {education.map((item, index) => (
                         <div key={index} className="w-fit h-fit">
-                           <div className="relative w-9 h-9 bg-yellow-500 rounded-full z-10">
+                           <div className="icons relative w-9 h-9 rounded-full z-10">
                               <IoBookSharp className="text-2xl absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2" />
                            </div>
-                           <div className="content-education flex flex-col pl-12 -mt-8 relative after:bg-zinc-700">
-                              <p className="py-px px-2 rounded-lg bg-zinc-700 w-fit mb-3">
+                           <div className="content-education flex flex-col pl-12 -mt-8 relative">
+                              <p className="py-px px-2 rounded-lg w-fit mb-3">
                                  {item.time}
                               </p>
                               <h2 className="uppercase mb-3 font-medium">
                                  {item.school}{' '}
-                                 <span className=" text-neutral-500">
+                                 <span className="">
                                     - {item.type}
                                  </span>
                               </h2>

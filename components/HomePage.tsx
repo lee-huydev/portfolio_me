@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { Slide, Button } from '@components/index';
 import { HiArrowSmRight } from 'react-icons/hi';
@@ -7,7 +6,6 @@ interface Props {
    theme?: ThemeProps;
 }
 const HomePage = ({ theme }: Props) => {
-   const bg = theme?.bg;
    return (
       <div className="w-full h-screen session-home">
          <Slide />
@@ -20,15 +18,15 @@ const HomePage = ({ theme }: Props) => {
                <div className="bg-main-img bg-cover bg-center bg-no-repeat w-52 h-52 rounded-full lg:h-auto lg:w-full lg:max-h-full lg:rounded-3xl lg:aspect-7/10 2xl:w-512"></div>
             </div>
             <div
-               className={`${bg} flex flex-col flex-grow items-center space-y-7 mt-5 px-5 lg:pr-20 lg:justify-start lg:items-start`}
+               className={`flex flex-col flex-grow items-center space-y-7 mt-5 px-5 lg:pr-20 lg:justify-start lg:items-start`}
             >
-               <h1 className="text-white text-2xl font-bold sm:text-3xl lg:text-5xl">
+               <h1 className="text-2xl font-bold sm:text-3xl lg:text-5xl">
                   Hi! I&apos;m Le Quoc Huy <br />
                   <span className=" font-bold text-xl sm:text-2xl lg:text-4xl">
                      Web Developer !
                   </span>
                </h1>
-               <p className="text-white text-sm ss:pb-0 sm:text-lg max-w-2xl lg:text-xl 2xl:max-w-3xl">
+               <p className="content text-sm ss:pb-0 sm:text-lg max-w-2xl lg:text-xl 2xl:max-w-3xl">
                   Hi guys! My name is Huy, currently a student at Mindx School
                   of Technology. Previously, I studied at Nam Can Tho University
                   and prepare graduate with a major in automotive engineering
@@ -42,14 +40,16 @@ const HomePage = ({ theme }: Props) => {
                </p>
                <div className="flex space-x-5 pb-24 sm:pb-1">
                   <Button
+                     link={true}
+                     Icon={HiArrowSmRight}
                      href={'/portfolio'}
                      name={'Portfolio'}
-                     rotate="rotate-0"
                   />
                   <Button
+                     link={true}
+                     Icon={HiArrowSmRight}
                      href={'/about'}
                      name={'About'}
-                     rotate="rotate-0"
                   />
                </div>
             </div>
