@@ -1,5 +1,5 @@
 import { MainLayout, HomePage } from '@components/index';
-import { NextPageWithLayout, ThemeProps } from '@typing';
+import { NextPageWithLayout } from '@typing';
 import Head from 'next/head';
 
 const Home: NextPageWithLayout = () => {
@@ -16,3 +16,5 @@ const Home: NextPageWithLayout = () => {
 };
 Home.Layout = MainLayout;
 export default Home;
+
+

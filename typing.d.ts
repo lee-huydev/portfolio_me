@@ -27,8 +27,8 @@ export interface PortItem {
 }
 export interface LayoutProps {
    children?: JSX.Element;
-   darkMode: boolean,
-   setDarkMode: Dispatch<SetStateAction<boolean>>
+   darkMode: boolean;
+   setDarkMode: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface Modals {
@@ -44,23 +44,67 @@ export interface DataRender {
 }
 
 export interface InputForm {
-   name: string,
-   subject: string,
-   email: string,
-   message: string,
+   name: string;
+   subject: string;
+   email: string;
+   message: string;
 }
 
 export interface ModalContact {
-   loading: boolean,
-   modal: boolean,
-   message: string,
-   status: boolean,
+   loading: boolean;
+   modal: boolean;
+   message: string;
+   status: boolean;
 }
 
 export type NextPageWithLayout = NextPage & {
    Layout?: (props: LayoutProps) => JSX.Element;
 };
 
+export interface Education {
+   time: string;
+   content: string;
+   type: string;
+   school: string;
+}
+export interface Skills {
+   name: string;
+   image: string;
+}
+export interface Information {
+   education: Education[];
+   person: {
+      Address: string;
+      Birthday: string;
+      Email: string;
+      Facebook: string;
+      'First-Name': string;
+      Language: string;
+      'Last-Name': string;
+      National: string;
+      Phone: string;
+      Sex: string;
+   };
+   skills: Skills[];
+}
+export interface Project {
+   id: number;
+   name: string;
+   image: string[];
+   link: string;
+   type: string;
+   content: string;
+   feature: string;
+   create: string;
+   fe: string;
+   be: string;
+}
+export type DataFetching = {
+   infomation: Information;
+   project: Project[];
+};
+
 export type AppPropsWithLayout = AppProps & {
    Component: NextPageWithLayout;
+   data: DataFetching;
 };

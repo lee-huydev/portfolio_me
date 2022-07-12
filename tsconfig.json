@@ -18,7 +18,6 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@typing": ["./typing.d.ts"],
-      "@fixtures/*": ["./fixtures/*"],
       "@constant/*":["./constant/*"]
     }
   },

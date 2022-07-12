@@ -5,7 +5,7 @@ import '../styles/globals.scss';
 import 'aos/dist/aos.css';
 import { AppPropsWithLayout } from '@typing';
 import { EmtyLayout } from '@components/index';
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function MyApp({ Component, pageProps, data }: AppPropsWithLayout) {
    const [darkMode, setDarkMode] = useState<boolean>(true)
    let mode = darkMode ? "dark" : "light"
    useEffect(() => {
@@ -20,9 +20,16 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
    const Layout = Component.Layout ?? EmtyLayout;
    return (
       <Layout darkMode={darkMode} setDarkMode={setDarkMode}>
-         <Component {...pageProps} />
+         <Component data= {data} {...pageProps} />
       </Layout>
    );
 }
 
 export default MyApp;
+
+MyApp.getInitialProps = async () => {
+   const query = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}`)
+   const res = await query.json()
+   return { data: res }
+ }
+ 

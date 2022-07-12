@@ -2,14 +2,13 @@ import React from 'react';
 import { IoBookSharp } from 'react-icons/io5';
 import { IoMdDownload } from 'react-icons/io'
 import { Header, Slide, Button } from '@components/index';
-import meData from '@fixtures/me.json';
-import { ThemeProps } from '@typing';
+import { Information } from '@typing';
 type Props = {
-   theme?: ThemeProps;
+   infomation?: Information
 };
 
-const AboutPage = ({ theme }: Props) => {
-   const { person, skills, education } = meData;
+const AboutPage = ({ infomation }: Props) => {
+   const { person, skills, education } = infomation || {};
    return (
       <>
          <Slide />
@@ -21,7 +20,7 @@ const AboutPage = ({ theme }: Props) => {
                         Personal infors
                      </h3>
                      <ul className="flex flex-wrap justify-start items-center w-full mt-5">
-                        {Object.entries(person).map(([key, value]) => {
+                        {Object.entries(person || {}).map(([key, value]) => {
                            if (key === 'Skills') {
                               return null;
                            }
@@ -89,7 +88,7 @@ const AboutPage = ({ theme }: Props) => {
                      My Skills
                   </h3>
                   <div className="grid p-2 grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-5 sm::gap-10">
-                     {skills.map((data, index) => (
+                     {skills?.map((data, index) => (
                         <div
                            key={index}
                            className="flex flex-col justify-center items-center space-y-2"
@@ -115,7 +114,7 @@ const AboutPage = ({ theme }: Props) => {
                      Education
                   </h3>
                   <div className="resume grid grid-cols-1 px-5 sm:grid-cols-2 gap-10 pb-20" data-aos="fade-up">
-                     {education.map((item, index) => (
+                     {education?.map((item, index) => (
                         <div key={index} className="w-fit h-fit">
                            <div className="icons relative w-9 h-9 rounded-full z-10">
                               <IoBookSharp className="text-2xl absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2" />

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProps } from '@typing';
-import PortData from '@fixtures/portfolio.json';
-import { PortItem, DataRender, Modals } from '@typing';
+import { DataRender, Modals, Project } from '@typing';
 import { Modal, Header } from '@components/index';
 import {
    CSS_JS,
@@ -11,20 +9,19 @@ import {
    ALL,
 } from '@constant/index';
 import Slide from './Slide';
-
 interface Props {
-   theme?: ThemeProps;
+   project?: Project[];
 }
-const Portfolio = () => {
+const Portfolio = ({ project }: Props) => {
    const initState = {
-      data: [...PortData],
+      data: [...project || []],
       filter: { type: 'all' },
       filters: {
-         [ALL]: (item: PortItem) => item,
-         [CSS_JS]: (item: PortItem) => item.type === CSS_JS,
-         [SCSS_NEXT]: (item: PortItem) => item.type === SCSS_NEXT,
-         [NEXT_TAILWIND]: (item: PortItem) => item.type === NEXT_TAILWIND,
-         [RES_API]: (item: PortItem) => item.type === RES_API,
+         [ALL]: (item: Project) => item,
+         [CSS_JS]: (item: Project) => item.type === CSS_JS,
+         [SCSS_NEXT]: (item: Project) => item.type === SCSS_NEXT,
+         [NEXT_TAILWIND]: (item: Project) => item.type === NEXT_TAILWIND,
+         [RES_API]: (item: Project) => item.type === RES_API,
       },
    };
    const [dataRender, setDataRender] = useState<DataRender>(initState);
@@ -37,13 +34,13 @@ const Portfolio = () => {
       console.log(keyName);
       setDataRender({
          ...initState,
-         data: PortData.filter(filters[keyName]),
+         data: project?.filter(filters[keyName]) || [],
          filter: {
             type: keyName,
          },
       });
    };
-   const handleModal = (item: PortItem) => {
+   const handleModal = (item: Project) => {
       setDataModals({
          ...modals,
          data: item,
@@ -54,14 +51,17 @@ const Portfolio = () => {
    return (
       <>
          <Slide />
-         <Header textInlineFirst='My' textInlineSecond="Portfolio" textOuline="Works" dataAos="fade-up">
+         <Header
+            textInlineFirst="My"
+            textInlineSecond="Portfolio"
+            textOuline="Works"
+            dataAos="fade-up"
+         >
             <>
                <div className="filter grid grid-cols-2 gap-3 px-5 text-xs ss:grid-cols-3 sm:text-sm lg:px-0 lg:flex lg:justify-center lg:space-x-5">
                   {Object.keys(filters).map((key, index) => (
                      <button
-                        className={`${
-                           filter.type === key ? 'active' : ''
-                        } `}
+                        className={`${filter.type === key ? 'active' : ''} `}
                         key={index}
                         onClick={() => handleOnClick(key)}
                      >
@@ -70,7 +70,7 @@ const Portfolio = () => {
                   ))}
                </div>
                <div className="container-items max-w-6xl pt-10 px-4 lg:px-20 pb-20 xl:px-0 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {data.map((item: PortItem) => (
+                  {data.map((item: Project) => (
                      <div
                         key={Math.floor(Math.random() * 1000)}
                         className="item relative"
