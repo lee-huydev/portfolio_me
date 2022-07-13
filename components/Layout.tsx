@@ -20,17 +20,17 @@ const MainLayout = ({
       <div className="layout w-full h-screen max-w-full -z-50 py-5">
          {darkMode ? (
             <div
-               className="dark-light fixed top-5 right-5 w-12 h-12 rounded-full bg-black"
-               onClick={changeMode}
-            >
-               <MdDarkMode className="text-3xl text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
-            </div>
-         ) : (
-            <div
                className="dark-light fixed top-5 right-5 w-12 h-12 rounded-full bg-zinc-700"
                onClick={changeMode}
             >
                <GoLightBulb className="text-3xl text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
+            </div>
+         ) : (
+            <div
+               className="dark-light fixed top-5 right-5 w-12 h-12 rounded-full bg-black"
+               onClick={changeMode}
+            >
+               <MdDarkMode className="text-3xl text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
             </div>
          )}
          <div className="fixed z-50 bottom-0  lg:right-5 lg:bottom-1/2 lg:translate-y-1/2">
